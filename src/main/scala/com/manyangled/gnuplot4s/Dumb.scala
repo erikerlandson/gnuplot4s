@@ -16,5 +16,6 @@ case class Dumb(siz: Option[(Int, Int)], asp: Option[(Int, Int)]) extends TermIn
 }
 
 object Dumb {
+  def apply(): Dumb = build
   def build = Dumb(None, None)
 }

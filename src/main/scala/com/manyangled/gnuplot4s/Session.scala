@@ -29,6 +29,7 @@ object Session {
     def build = Options(None, None, None)
   }
 
+  def apply(): Session = build
   def build = Session(
     Dumb.build,
     Vector.empty[PlotInterface],

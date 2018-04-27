@@ -29,6 +29,7 @@ case class Plot(usin: (Int, Int), styl: PlotStyle, blk: String) extends PlotInte
 }
 
 object Plot {
+  def apply(): Plot = build
   def build = Plot((0, 1), PlotStyle.LinesPoints, "data")
 
   def plotClause(plots: Seq[PlotInterface]): () => Iterator[String] = {
