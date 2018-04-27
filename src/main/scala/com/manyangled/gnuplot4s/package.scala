@@ -3,19 +3,12 @@ package com.manyangled
 package object gnuplot4s {
   import cats.free.Free
 
-  trait TermLike[T <: TermLike[T]] { self: T =>
-    def sessionSub: Free[GPScript, Unit]
+  trait TermInterface {
+    def sessionClause: () => Iterator[String]
   }
 
-  trait Plottable
-
-  trait PlotLike[P <: PlotLike[P]] { self: P =>
-    def sessionSub: Free[GPScript, Unit]
-    def plotSub: Free[GPScript, Unit]
-  }
-  case class NoPlot() extends PlotLike[NoPlot] {
-    def sessionSub = for { _ <- GPScript.end() } yield ()
-    def plotSub = for { _ <- GPScript.end() } yield ()
+  trait PlotInterface {
+    def plotClause: () => Iterator[String]
   }
 
   trait ToString[T] {
@@ -53,23 +46,11 @@ package object gnuplot4s {
     def apply (t: (T1, T2)) = Vector(ts1(t._1), ts2(t._2))
   }
 
-  implicit class EnrichedSession[T <: TermLike[T], P <: PlotLike[P] with Plottable](session: Session[T, P]) {
+  implicit class EnrichedSession(session: Session) {
     import scala.sys.process._
 
-    def plot[R](data: TraversableOnce[R])(implicit toStrSeq: ToStringSeq[R]): Unit = {
-      val prog = for {
-        _ <- GPScript.data(data)(
-          { Some("$data << EOD\n") },
-          { r => toStrSeq(r).mkString(" ") + "\n" },
-          { Some("EOD\n") });
-        _ <- GPScript.sub(session.term.sessionSub);
-        _ <- GPScript.opt(session.opt.title) { t => s"""set title "${t}"\n""" };
-        _ <- GPScript.opt(session.opt.xLabel) { t => s"""set xlabel "${t}"\n""" };
-        _ <- GPScript.opt(session.opt.yLabel) { t => s"""set ylabel "${t}"\n""" };
-        _ <- GPScript.sub(session.plot.sessionSub);
-        _ <- GPScript.sub(session.plot.plotSub);
-        _ <- GPScript.end()
-      } yield ()
+    def render: Unit = {
+      val prog = this.program
       val io = scala.sys.process.BasicIO.standard({ in =>
         GPScript.run(prog, { s => {
           in.write(s.getBytes())
@@ -78,6 +59,20 @@ package object gnuplot4s {
       })
       val cmd = List("/usr/bin/gnuplot")
       cmd.run(io)
+    }
+
+    def print: Unit = GPScript.run(this.program)
+
+    def program: Free[GPScript, Unit] = {
+      for {
+        _ <- GPScript.data(session.blks);
+        _ <- GPScript.clause(session.trm.sessionClause);
+        _ <- GPScript.opt(session.opt.title) { t => s"""set title "${t}"\n""" };
+        _ <- GPScript.opt(session.opt.xLabel) { t => s"""set xlabel "${t}"\n""" };
+        _ <- GPScript.opt(session.opt.yLabel) { t => s"""set ylabel "${t}"\n""" };
+        _ <- GPScript.clause(Plot.plotClause(session.plots));
+        _ <- GPScript.end()
+      } yield ()  
     }
   }
 }

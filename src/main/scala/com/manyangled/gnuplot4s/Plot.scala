@@ -13,23 +13,35 @@ object PlotStyle {
   }
 }
 
-case class Plot(usin: (Int, Int), style: PlotStyle) extends PlotLike[Plot] with Plottable {
+case class Plot(usin: (Int, Int), styl: PlotStyle, blk: String) extends PlotInterface {
   require(usin._1 >= 0 && usin._2 >= 1)
   def using(xc: Int, yc: Int) = this.copy(usin = (xc, yc))
   def using(yc: Int) = this.copy(usin = (0, yc))
-  def withStyle(ps: PlotStyle) = this.copy(style = ps)
-  def sessionSub = for {
-    _ <- GPScript.end()
-  } yield ()
-  def plotSub = for {
-    _ <- GPScript.str("plot $data");
-    _ <- GPScript.str(s" using ${usin._1}:${usin._2}");
-    _ <- GPScript.str(s" with ${PlotStyle.str(style)}");
-    _ <- GPScript.str("\n");
-    _ <- GPScript.end()
-  } yield ()
+  def style(ps: PlotStyle) = this.copy(styl = ps)
+  def block(b: String) = this.copy(blk = b)
+  def plotClause = () => {
+    List(
+      s" $$$blk",
+      s" using ${usin._1}:${usin._2}",
+      s" with ${PlotStyle.str(styl)}"
+    ).toIterator
+  }
 }
 
 object Plot {
-  def build = Plot((0, 1), PlotStyle.LinesPoints)
+  def build = Plot((0, 1), PlotStyle.LinesPoints, "data")
+
+  def plotClause(plots: Seq[PlotInterface]): () => Iterator[String] = {
+    if (plots.length < 1) {
+      () => { Iterator.empty }
+    } else {
+      () => {
+        val z = Iterator("plot") ++ ((plots.head.plotClause)())
+        val r = plots.tail.map(_.plotClause).foldLeft(z) { case (t, c) =>
+          t ++ Iterator(", ") ++ (c())
+        }
+        r ++ Iterator("\n")
+      }
+    }
+  }
 }

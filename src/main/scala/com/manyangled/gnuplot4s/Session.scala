@@ -1,15 +1,22 @@
 package com.manyangled.gnuplot4s
 
-case class Session[T <: TermLike[T], P <: PlotLike[P]](
-  term: T,
-  plot: P,
-  opt: Session.Options
+case class Session(
+  trm: TermInterface,
+  plots: Vector[PlotInterface],
+  opt: Session.Options,
+  blks: Map[String, BlockRows]
 ) {
-  def withTerm[T2 <: TermLike[T2]](t2: T2) = Session(t2, plot, opt)
-  def withPlot[P2 <: PlotLike[P2]](p2: P2) = Session(term, p2, opt)
-  def withTitle(title: String) = this.copy(opt = opt.copy(title = Some(title)))
-  def withXLabel(xLabel: String) = this.copy(opt = opt.copy(xLabel = Some(xLabel)))
-  def withYLabel(yLabel: String) = this.copy(opt = opt.copy(yLabel = Some(yLabel)))
+  def term(t2: TermInterface) = this.copy(trm = t2)
+  def plot() = this.copy(plots = Vector.empty[PlotInterface])
+  def plot(p: PlotInterface) = this.copy(plots = this.plots :+ p)
+  def title(title: String) = this.copy(opt = opt.copy(title = Some(title)))
+  def xLabel(xLabel: String) = this.copy(opt = opt.copy(xLabel = Some(xLabel)))
+  def yLabel(yLabel: String) = this.copy(opt = opt.copy(yLabel = Some(yLabel)))
+  def block() = this.copy(blks = Map.empty[String, BlockRows])
+  def block[R](name: String, data: Seq[R])(implicit toStrSeq: ToStringSeq[R]) = {
+    val br = BlockRows(() => { data.toIterator.map { r => toStrSeq(r).mkString(" ") + "\n" }  })
+    this.copy(blks = this.blks + (name -> br))
+  }
 }
 
 object Session {
@@ -24,7 +31,8 @@ object Session {
 
   def build = Session(
     Dumb.build,
-    NoPlot(),
-    Options.build
+    Vector.empty[PlotInterface],
+    Options.build,
+    Map.empty[String, BlockRows]
   )
 }
