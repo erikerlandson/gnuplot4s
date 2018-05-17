@@ -4,8 +4,10 @@ case class Session(
   trm: TermInterface,
   plots: Vector[PlotInterface],
   opt: Session.Options,
-  blks: Map[String, BlockRows]
+  blks: Map[String, BlockRows],
+  gpcmd: String
 ) {
+  def gnuplot(cmd: String) = this.copy(gpcmd = cmd)
   def term(t2: TermInterface) = this.copy(trm = t2)
   def plot() = this.copy(plots = Vector.empty[PlotInterface])
   def plot(p: PlotInterface) = this.copy(plots = this.plots :+ p)
@@ -34,6 +36,7 @@ object Session {
     Dumb.build,
     Vector.empty[PlotInterface],
     Options.build,
-    Map.empty[String, BlockRows]
+    Map.empty[String, BlockRows],
+    "/usr/bin/gnuplot"
   )
 }

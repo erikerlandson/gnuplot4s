@@ -57,7 +57,7 @@ package object gnuplot4s {
         } })
         in.close()
       })
-      val cmd = List("/usr/bin/gnuplot")
+      val cmd = List(session.gpcmd)
       cmd.run(io)
     }
 
