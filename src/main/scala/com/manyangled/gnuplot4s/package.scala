@@ -51,12 +51,24 @@ package object gnuplot4s {
 
     def render: Unit = {
       val prog = this.program
-      val io = scala.sys.process.BasicIO.standard({ in =>
+      val io = new ProcessIO({ in: java.io.OutputStream =>
         GPScript.run(prog, { s => {
           in.write(s.getBytes())
         } })
         in.close()
-      })
+      },
+      { out: java.io.InputStream =>
+        val isr = new java.io.InputStreamReader(out)
+        val bufReader = new java.io.BufferedReader(isr)
+        var line = bufReader.readLine()
+        while (line != null) {
+          println(line)
+          line = bufReader.readLine()
+        }
+        bufReader.close()
+        out.close()
+      },
+      { err => () })
       val cmd = List(session.gpcmd)
       cmd.run(io)
     }

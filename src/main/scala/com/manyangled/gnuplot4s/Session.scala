@@ -1,14 +1,16 @@
 package com.manyangled.gnuplot4s
 
 case class Session(
-  trm: TermInterface,
-  plots: Vector[PlotInterface],
-  opt: Session.Options,
   blks: Map[String, BlockRows],
+  trm: TermInterface,
+  out: Session.Output,
+  opt: Session.Options,
+  plots: Vector[PlotInterface],
   gpcmd: String
 ) {
   def gnuplot(cmd: String) = this.copy(gpcmd = cmd)
   def term(t2: TermInterface) = this.copy(trm = t2)
+  def output(o: Session.Output) = this.copy(out = o)
   def plot() = this.copy(plots = Vector.empty[PlotInterface])
   def plot(p: PlotInterface) = this.copy(plots = this.plots :+ p)
   def title(title: String) = this.copy(opt = opt.copy(title = Some(title)))
@@ -31,12 +33,21 @@ object Session {
     def build = Options(None, None, None)
   }
 
+  trait Output
+  object Output {
+    case object Console extends Output
+    case object Collect extends Output
+    case class File(fname: String) extends Output
+    case class Pipe(cmd: String) extends Output
+  }
+
   def apply(): Session = build
   def build = Session(
-    Dumb.build,
-    Vector.empty[PlotInterface],
-    Options.build,
     Map.empty[String, BlockRows],
+    Dumb.build,
+    Output.Console,
+    Options.build,
+    Vector.empty[PlotInterface],
     "/usr/bin/gnuplot"
   )
 }
