@@ -11,3 +11,71 @@ resolvers += "manyangled" at "https://dl.bintray.com/manyangled/maven/"
 
 libraryDependencies += "com.manyangled" %% "gnuplot4s" % "0.1.0"
 ```
+
+### Examples
+
+```scala
+scala> val data = Array((0,0), (1,1), (2,2))
+data: Array[(Int, Int)] = Array((0,0), (1,1), (2,2))
+
+scala> val gnuplot = Session().block("data", data).plot(Plot().block("data").style(PlotStyle.Points)).term(Dumb())
+gnuplot: com.manyangled.gnuplot4s.Session = Session(Map(data -> BlockRows(<function0>)),Dumb(None,None),Console,Options(None,None,None),Vector(Plot((0,1),Points,data)),/usr/bin/gnuplot)
+
+scala> gnuplot.render
+
+scala> 
+                         
+                                                                               
+    2 +-+--------------+-----------------+----------------+--------------+-A   
+      +                +                 +                +                +   
+      |                                            $data using 0:1    A    |   
+      |                                                                    |   
+      |                                                                    |   
+  1.5 +-+                                                                +-+   
+      |                                                                    |   
+      |                                                                    |   
+      |                                                                    |   
+    1 +-+                                A                               +-+   
+      |                                                                    |   
+      |                                                                    |   
+      |                                                                    |   
+      |                                                                    |   
+  0.5 +-+                                                                +-+   
+      |                                                                    |   
+      |                                                                    |   
+      |                                                                    |   
+      +                +                 +                +                +   
+    0 A-+--------------+-----------------+----------------+--------------+-+   
+      0               0.5                1               1.5               2   
+
+scala> val gnuplot = Session().block("data", data).plot(Plot().block("data").style(PlotStyle.LinesPoints)).term(Dumb())
+gnuplot: com.manyangled.gnuplot4s.Session = Session(Map(data -> BlockRows(<function0>)),Dumb(None,None),Console,Options(None,None,None),Vector(Plot((0,1),LinesPoints,data)),/usr/bin/gnuplot)
+
+scala> gnuplot.render
+
+scala> 
+
+                                                                               
+    2 +-+--------------+-----------------+----------------+--------------+*A   
+      +                +                 +                +           **** +   
+      |                                            $data using 0:1****A*** |   
+      |                                                       ****         |   
+      |                                                   ****             |   
+  1.5 +-+                                              ***               +-+   
+      |                                            ****                    |   
+      |                                        ****                        |   
+      |                                    ****                            |   
+    1 +-+                               *A*                              +-+   
+      |                             ****                                   |   
+      |                          ***                                       |   
+      |                      ****                                          |   
+      |                   ***                                              |   
+  0.5 +-+             ****                                               +-+   
+      |            ***                                                     |   
+      |        ****                                                        |   
+      |     ***                                                            |   
+      + ****           +                 +                +                +   
+    0 A*+--------------+-----------------+----------------+--------------+-+   
+      0               0.5                1               1.5               2   
+                                                                               
+```
