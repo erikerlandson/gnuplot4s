@@ -1,0 +1,733 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>Session - com.manyangled.gnuplot4s.Session</title>
+          <meta name="description" content="Session - com.manyangled.gnuplot4s.Session" />
+          <meta name="keywords" content="Session com.manyangled.gnuplot4s.Session" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'com.manyangled.gnuplot4s.Session';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <a href="Session$.html" title="See companion object"><img alt="Class/Object" src="../../../lib/class_to_object_big.png" /></a>
+        <p id="owner"><a href="../../package.html" class="extype" name="com">com</a>.<a href="../package.html" class="extype" name="com.manyangled">manyangled</a>.<a href="package.html" class="extype" name="com.manyangled.gnuplot4s">gnuplot4s</a></p>
+        <h1><a href="Session$.html" title="See companion object">Session</a></h1><h3><span class="morelinks"><div>
+            Related Docs:
+            <a href="Session$.html" title="See companion object">object Session</a>
+            | <a href="package.html" class="extype" name="com.manyangled.gnuplot4s">package gnuplot4s</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Session</span><span class="params">(<span name="blks">blks: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="BlockRows.html" class="extype" name="com.manyangled.gnuplot4s.BlockRows">BlockRows</a>]</span>, <span name="trm">trm: <a href="package$$TermInterface.html" class="extype" name="com.manyangled.gnuplot4s.TermInterface">TermInterface</a></span>, <span name="out">out: <a href="Session$$Output.html" class="extype" name="com.manyangled.gnuplot4s.Session.Output">Output</a></span>, <span name="opt">opt: <a href="Session$$Options.html" class="extype" name="com.manyangled.gnuplot4s.Session.Options">Options</a></span>, <span name="plots">plots: <span class="extype" name="scala.Vector">Vector</span>[<a href="package$$PlotInterface.html" class="extype" name="com.manyangled.gnuplot4s.PlotInterface">PlotInterface</a>]</span>, <span name="gpcmd">gpcmd: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="com.manyangled.gnuplot4s.Session"><span>Session</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="com.manyangled.gnuplot4s.Session#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(blks:Map[String,com.manyangled.gnuplot4s.BlockRows],trm:com.manyangled.gnuplot4s.TermInterface,out:com.manyangled.gnuplot4s.Session.Output,opt:com.manyangled.gnuplot4s.Session.Options,plots:Vector[com.manyangled.gnuplot4s.PlotInterface],gpcmd:String):com.manyangled.gnuplot4s.Session"></a>
+      <a id="&lt;init&gt;:Session"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Session</span><span class="params">(<span name="blks">blks: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="BlockRows.html" class="extype" name="com.manyangled.gnuplot4s.BlockRows">BlockRows</a>]</span>, <span name="trm">trm: <a href="package$$TermInterface.html" class="extype" name="com.manyangled.gnuplot4s.TermInterface">TermInterface</a></span>, <span name="out">out: <a href="Session$$Output.html" class="extype" name="com.manyangled.gnuplot4s.Session.Output">Output</a></span>, <span name="opt">opt: <a href="Session$$Options.html" class="extype" name="com.manyangled.gnuplot4s.Session.Options">Options</a></span>, <span name="plots">plots: <span class="extype" name="scala.Vector">Vector</span>[<a href="package$$PlotInterface.html" class="extype" name="com.manyangled.gnuplot4s.PlotInterface">PlotInterface</a>]</span>, <span name="gpcmd">gpcmd: <span class="extype" name="scala.Predef.String">String</span></span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@&lt;init&gt;(blks:Map[String,com.manyangled.gnuplot4s.BlockRows],trm:com.manyangled.gnuplot4s.TermInterface,out:com.manyangled.gnuplot4s.Session.Output,opt:com.manyangled.gnuplot4s.Session.Options,plots:Vector[com.manyangled.gnuplot4s.PlotInterface],gpcmd:String):com.manyangled.gnuplot4s.Session" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@##():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="com.manyangled.gnuplot4s.Session#blks" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="blks:Map[String,com.manyangled.gnuplot4s.BlockRows]"></a>
+      <a id="blks:Map[String,BlockRows]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">blks</span><span class="result">: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="BlockRows.html" class="extype" name="com.manyangled.gnuplot4s.BlockRows">BlockRows</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@blks:Map[String,com.manyangled.gnuplot4s.BlockRows]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.manyangled.gnuplot4s.Session#block" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="block[R](name:String,data:Seq[R])(implicittoStrSeq:com.manyangled.gnuplot4s.ToStringSeq[R]):com.manyangled.gnuplot4s.Session"></a>
+      <a id="block[R](String,Seq[R])(ToStringSeq[R]):Session"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">block</span><span class="tparams">[<span name="R">R</span>]</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="data">data: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="com.manyangled.gnuplot4s.Session.block.R">R</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="toStrSeq">toStrSeq: <a href="package$$ToStringSeq.html" class="extype" name="com.manyangled.gnuplot4s.ToStringSeq">ToStringSeq</a>[<span class="extype" name="com.manyangled.gnuplot4s.Session.block.R">R</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.manyangled.gnuplot4s.Session">Session</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@block[R](name:String,data:Seq[R])(implicittoStrSeq:com.manyangled.gnuplot4s.ToStringSeq[R]):com.manyangled.gnuplot4s.Session" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.manyangled.gnuplot4s.Session#block" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="block():com.manyangled.gnuplot4s.Session"></a>
+      <a id="block():Session"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">block</span><span class="params">()</span><span class="result">: <a href="" class="extype" name="com.manyangled.gnuplot4s.Session">Session</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@block():com.manyangled.gnuplot4s.Session" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@clone():Object" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="com.manyangled.gnuplot4s.Session#gnuplot" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="gnuplot(cmd:String):com.manyangled.gnuplot4s.Session"></a>
+      <a id="gnuplot(String):Session"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">gnuplot</span><span class="params">(<span name="cmd">cmd: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="com.manyangled.gnuplot4s.Session">Session</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@gnuplot(cmd:String):com.manyangled.gnuplot4s.Session" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.manyangled.gnuplot4s.Session#gpcmd" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="gpcmd:String"></a>
+      <a id="gpcmd:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">gpcmd</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@gpcmd:String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="com.manyangled.gnuplot4s.Session#opt" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="opt:com.manyangled.gnuplot4s.Session.Options"></a>
+      <a id="opt:Options"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">opt</span><span class="result">: <a href="Session$$Options.html" class="extype" name="com.manyangled.gnuplot4s.Session.Options">Options</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@opt:com.manyangled.gnuplot4s.Session.Options" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.manyangled.gnuplot4s.Session#out" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="out:com.manyangled.gnuplot4s.Session.Output"></a>
+      <a id="out:Output"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">out</span><span class="result">: <a href="Session$$Output.html" class="extype" name="com.manyangled.gnuplot4s.Session.Output">Output</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@out:com.manyangled.gnuplot4s.Session.Output" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.manyangled.gnuplot4s.Session#output" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="output(o:com.manyangled.gnuplot4s.Session.Output):com.manyangled.gnuplot4s.Session"></a>
+      <a id="output(Output):Session"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">output</span><span class="params">(<span name="o">o: <a href="Session$$Output.html" class="extype" name="com.manyangled.gnuplot4s.Session.Output">Output</a></span>)</span><span class="result">: <a href="" class="extype" name="com.manyangled.gnuplot4s.Session">Session</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@output(o:com.manyangled.gnuplot4s.Session.Output):com.manyangled.gnuplot4s.Session" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.manyangled.gnuplot4s.Session#plot" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="plot(p:com.manyangled.gnuplot4s.PlotInterface):com.manyangled.gnuplot4s.Session"></a>
+      <a id="plot(PlotInterface):Session"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">plot</span><span class="params">(<span name="p">p: <a href="package$$PlotInterface.html" class="extype" name="com.manyangled.gnuplot4s.PlotInterface">PlotInterface</a></span>)</span><span class="result">: <a href="" class="extype" name="com.manyangled.gnuplot4s.Session">Session</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@plot(p:com.manyangled.gnuplot4s.PlotInterface):com.manyangled.gnuplot4s.Session" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.manyangled.gnuplot4s.Session#plot" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="plot():com.manyangled.gnuplot4s.Session"></a>
+      <a id="plot():Session"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">plot</span><span class="params">()</span><span class="result">: <a href="" class="extype" name="com.manyangled.gnuplot4s.Session">Session</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@plot():com.manyangled.gnuplot4s.Session" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.manyangled.gnuplot4s.Session#plots" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="plots:Vector[com.manyangled.gnuplot4s.PlotInterface]"></a>
+      <a id="plots:Vector[PlotInterface]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">plots</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[<a href="package$$PlotInterface.html" class="extype" name="com.manyangled.gnuplot4s.PlotInterface">PlotInterface</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@plots:Vector[com.manyangled.gnuplot4s.PlotInterface]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="com.manyangled.gnuplot4s.Session#term" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="term(t2:com.manyangled.gnuplot4s.TermInterface):com.manyangled.gnuplot4s.Session"></a>
+      <a id="term(TermInterface):Session"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">term</span><span class="params">(<span name="t2">t2: <a href="package$$TermInterface.html" class="extype" name="com.manyangled.gnuplot4s.TermInterface">TermInterface</a></span>)</span><span class="result">: <a href="" class="extype" name="com.manyangled.gnuplot4s.Session">Session</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@term(t2:com.manyangled.gnuplot4s.TermInterface):com.manyangled.gnuplot4s.Session" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.manyangled.gnuplot4s.Session#title" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="title(title:String):com.manyangled.gnuplot4s.Session"></a>
+      <a id="title(String):Session"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">title</span><span class="params">(<span name="title">title: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="com.manyangled.gnuplot4s.Session">Session</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@title(title:String):com.manyangled.gnuplot4s.Session" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.manyangled.gnuplot4s.Session#trm" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="trm:com.manyangled.gnuplot4s.TermInterface"></a>
+      <a id="trm:TermInterface"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">trm</span><span class="result">: <a href="package$$TermInterface.html" class="extype" name="com.manyangled.gnuplot4s.TermInterface">TermInterface</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@trm:com.manyangled.gnuplot4s.TermInterface" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="com.manyangled.gnuplot4s.Session#xLabel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="xLabel(xLabel:String):com.manyangled.gnuplot4s.Session"></a>
+      <a id="xLabel(String):Session"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">xLabel</span><span class="params">(<span name="xLabel">xLabel: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="com.manyangled.gnuplot4s.Session">Session</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@xLabel(xLabel:String):com.manyangled.gnuplot4s.Session" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.manyangled.gnuplot4s.Session#yLabel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="yLabel(yLabel:String):com.manyangled.gnuplot4s.Session"></a>
+      <a id="yLabel(String):Session"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">yLabel</span><span class="params">(<span name="yLabel">yLabel: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="com.manyangled.gnuplot4s.Session">Session</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.manyangled.gnuplot4s.Session@yLabel(yLabel:String):com.manyangled.gnuplot4s.Session" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.Serializable">
+              <h3>Inherited from <span class="extype" name="scala.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="scala.Product">
+              <h3>Inherited from <span class="extype" name="scala.Product">Product</span></h3>
+            </div><div class="parent" name="scala.Equals">
+              <h3>Inherited from <span class="extype" name="scala.Equals">Equals</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
