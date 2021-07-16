@@ -4,7 +4,7 @@ name := "gnuplot4s"
 
 organization := "com.manyangled"
 
-version := "0.2.0"
+version := "0.2.1-SNAP"
 
 scalaVersion := "2.13.6"
 
